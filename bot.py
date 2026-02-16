@@ -8,7 +8,7 @@ from time import time
 import datetime
 
 # ===== НАСТРОЙКИ =====
-TOKEN = "8551394317:AAGV5tK1x_ecrxKnVxGAsRUwdK7OqegTZmM"           # вставь сюда токен от @BotFather
+TOKEN = "8551394317:AAE4EGkf-Eh5jDDWjbU_RPdkccZJqCplqGM"           # вставь сюда токен от @BotFather
 ADMIN_ID = 5096008275                 # твой Telegram ID (число)
 CHANNEL_ID = "@Ani_Rain"         # username канала (с @) или числовой ID в кавычках, например "-1001234567890"
 # =====================
@@ -248,3 +248,4 @@ if __name__ == '__main__':
     print("Бот запущен...")
 
     bot.polling(none_stop=True, interval=0)
+
