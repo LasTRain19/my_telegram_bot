@@ -1,3 +1,5 @@
+import os
+TOKEN = os.environ.get('TOKEN')
 import threading
 from flask import Flask
 import telebot
@@ -244,4 +246,5 @@ threading.Thread(target=run_flask).start()
 
 if __name__ == '__main__':
     print("Бот запущен...")
+
     bot.polling(none_stop=True, interval=0)
