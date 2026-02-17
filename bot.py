@@ -1,5 +1,9 @@
 import os
 TOKEN = os.environ.get('TOKEN')
+if TOKEN is None:
+    print("ОШИБКА: TOKEN не задан в переменных окружения!")
+else:
+    print(f"Токен загружен, длина: {len(TOKEN)}")
 import threading
 from flask import Flask
 import telebot
@@ -8,7 +12,6 @@ from time import time
 import datetime
 
 # ===== НАСТРОЙКИ =====
-TOKEN = "8551394317:AAE4EGkf-Eh5jDDWjbU_RPdkccZJqCplqGM"           # вставь сюда токен от @BotFather
 ADMIN_ID = 5096008275                 # твой Telegram ID (число)
 CHANNEL_ID = "@Ani_Rain"         # username канала (с @) или числовой ID в кавычках, например "-1001234567890"
 # =====================
@@ -247,8 +250,13 @@ def run_flask():
 threading.Thread(target=run_flask).start()
 
 if __name__ == '__main__':
+    try:
     print("Бот запущен...")
+    bot.polling(none_stop=True, interval=0)
+except Exception as e:
+    print(f"КРИТИЧЕСКАЯ ОШИБКА: {e}")
 
     bot.polling(none_stop=True, interval=0)
+
 
 
