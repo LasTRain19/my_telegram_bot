@@ -22,6 +22,7 @@ pending_posts = {}       # сохранённые данные постов: {ad
 
 # Логирование в файл
 def log(user_id, username):
+    pass
     with open("log.txt", "a", encoding="utf-8") as f:
         f.write(f"{datetime.datetime.now()} - {user_id} (@{username})\n")
 
@@ -47,6 +48,7 @@ def handle_content(message):
     user = message.from_user
     user_id = user.id
     username = f"@{user.username}" if user.username else user.first_name
+    print(f"Получено сообщение от {user_id}, тип: {message.content_type}")
 
     # 1. Антифлуд
     now = time()
@@ -60,7 +62,7 @@ def handle_content(message):
         return
 
     # 3. Логируем
-    log(user_id, user.username or "no_username")
+    #log(user_id, user.username or "no_username")
 
     # 4. Подпись для админа (с ID пользователя)
     user_link = f'<a href="tg://user?id={user_id}">{username}</a>'
@@ -248,4 +250,5 @@ if __name__ == '__main__':
     print("Бот запущен...")
 
     bot.polling(none_stop=True, interval=0)
+
 
