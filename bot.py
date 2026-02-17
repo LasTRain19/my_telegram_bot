@@ -34,7 +34,7 @@ def log(user_id, username):
 def start(message):
     bot.send_message(message.chat.id,
                      "✨ Добро пожаловать в Общество душ, отправь мне арт, эдит или идею — я передам капитану!\n"
-                     "Можнешь скинуть фото, видео, GIF, файл или просто текст.")
+                     "Можешь скинуть фото, видео, GIF, файл или просто текст.")
 
 # ===== ОБРАБОТЧИК ОТВЕТОВ АДМИНА (ДОЛЖЕН БЫТЬ ПЕРВЫМ) =====
 @bot.message_handler(func=lambda m: m.from_user.id == ADMIN_ID and m.from_user.id in reply_mode)
@@ -255,6 +255,7 @@ if __name__ == '__main__':
         bot.polling(none_stop=True, interval=0)
     except Exception as e:
         print(f"КРИТИЧЕСКАЯ ОШИБКА: {e}")
+
 
 
 
