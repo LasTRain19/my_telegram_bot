@@ -251,12 +251,13 @@ threading.Thread(target=run_flask).start()
 
 if __name__ == '__main__':
     try:
-    print("Бот запущен...")
-    bot.polling(none_stop=True, interval=0)
-except Exception as e:
-    print(f"КРИТИЧЕСКАЯ ОШИБКА: {e}")
+        print("Бот запущен...")
+        bot.polling(none_stop=True, interval=0)
+    except Exception as e:
+        print(f"КРИТИЧЕСКАЯ ОШИБКА: {e}")
 
     bot.polling(none_stop=True, interval=0)
+
 
 
 
