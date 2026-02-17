@@ -256,8 +256,6 @@ if __name__ == '__main__':
     except Exception as e:
         print(f"КРИТИЧЕСКАЯ ОШИБКА: {e}")
 
-    bot.polling(none_stop=True, interval=0)
-
 
 
 
